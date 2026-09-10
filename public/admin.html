@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin · Email Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="admin-body">
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">✉️</span>
+      <div>
+        <h1>Email Dashboard</h1>
+        <p class="tagline">Admin moderation</p>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <a class="btn btn-ghost btn-sm" href="/">← Back to studio</a>
+      <span id="admin-who" class="user-chip"></span>
+      <button id="theme-toggle" class="icon-btn" title="Toggle light/dark mode" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </header>
+  <main class="admin-layout">
+    <section class="admin-main">
+      <div class="pane-header">
+        <h2>Accounts</h2>
+        <div class="pane-actions admin-filters">
+          <input type="search" id="user-search" placeholder="Search email or name…" />
+          <select id="status-filter">
+            <option value="all">All statuses</option>
+            <option value="active">Active</option>
+            <option value="suspended">Suspended</option>
+            <option value="banned">Banned</option>
+            <option value="deleted">Deleted</option>
+          </select>
+          <button type="button" id="btn-refresh" class="btn btn-ghost btn-sm">Refresh</button>
+        </div>
+      </div>
+      <div id="admin-banner" class="admin-banner" hidden></div>
+      <div class="table-wrap">
+        <table class="admin-table" id="users-table">
+          <thead>
+            <tr>
+              <th>Account</th><th>Role</th><th>Status</th><th>Created</th><th>Last login</th><th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="users-body">
+            <tr><td colspan="6" class="muted">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <aside class="admin-side">
+      <div class="pane-header"><h2>Audit log</h2></div>
+      <ol id="audit-list" class="audit-list"><li class="muted">Loading…</li></ol>
+    </aside>
+  </main>
+  <script src="admin.js"></script>
+</body>
+</html>

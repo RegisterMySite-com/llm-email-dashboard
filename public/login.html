@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign in · Email Dashboard</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✉️</text></svg>" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="auth-body">
+  <div class="auth-shell">
+    <header class="auth-brand">
+      <span class="logo">✉️</span>
+      <div>
+        <h1>Email Dashboard</h1>
+        <p class="tagline">Provisioned by registermysite.com</p>
+      </div>
+    </header>
+    <section class="auth-card" aria-labelledby="auth-title">
+      <div class="auth-tabs" role="tablist">
+        <button type="button" class="auth-tab active" data-mode="signin" role="tab" aria-selected="true">Sign in</button>
+        <button type="button" class="auth-tab" data-mode="signup" role="tab" aria-selected="false">Create account</button>
+      </div>
+      <h2 id="auth-title">Welcome back</h2>
+      <p class="auth-lead" id="auth-lead">Sign in to generate and send HTML-safe emails.</p>
+      <div id="auth-alert" class="auth-alert" hidden role="alert"></div>
+      <form id="auth-form" autocomplete="on">
+        <div class="field" id="name-field" hidden>
+          <label for="display-name">Name <span class="optional">(optional)</span></label>
+          <input type="text" id="display-name" name="displayName" maxlength="80" placeholder="Jane Doe" autocomplete="name" />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com" autocomplete="email" />
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required minlength="8" placeholder="At least 8 characters" autocomplete="current-password" />
+        </div>
+        <label class="terms-row" id="terms-row" hidden>
+          <input type="checkbox" id="accepted-terms" name="acceptedTerms" />
+          <span>I have read and agree to the <a href="/terms.html" target="_blank" rel="noopener">Terms and Conditions</a>.</span>
+        </label>
+        <button type="submit" class="btn btn-primary auth-submit" id="auth-submit">Sign in</button>
+      </form>
+    </section>
+    <p class="auth-foot">Powered by Cloudflare Workers AI + Email Service</p>
+  </div>
+  <script src="login.js"></script>
+</body>
+</html>
