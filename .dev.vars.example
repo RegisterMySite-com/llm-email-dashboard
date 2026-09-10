@@ -1,0 +1,5 @@
+# Copy to .dev.vars for local wrangler dev
+ROOT_DOMAIN=example.com
+DEFAULT_FROM=hello@example.com
+ALLOWED_SENDERS=hello@example.com
+ADMIN_EMAILS=owner@example.com

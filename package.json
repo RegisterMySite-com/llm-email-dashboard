@@ -1,0 +1,18 @@
+{
+  "name": "llm-email-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "registermysite.com tenant dashboard: Workers AI HTML-safe email generator + composer + Email Sending",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "cf-typegen": "wrangler types",
+    "d1:init": "wrangler d1 execute email-studio --file=./schema.sql",
+    "check": "tsc --noEmit && wrangler deploy --dry-run"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260902.1",
+    "typescript": "^5.8.0",
+    "wrangler": "^4.20.0"
+  }
+}
